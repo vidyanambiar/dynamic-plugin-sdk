@@ -41,13 +41,15 @@ export const k8sGetResource = <TResource extends K8sResourceCommon>({
   model,
   queryOptions = {},
   fetchOptions = {},
-}: K8sResourceReadOptions): Promise<TResource> =>
-  commonFetchJSON<TResource>(
+}: K8sResourceReadOptions): Promise<TResource> => {
+  debugger;
+  return commonFetchJSON<TResource>(
     getK8sResourceURL(model, undefined, queryOptions),
     fetchOptions.requestInit,
     fetchOptions.timeout,
     true,
   );
+};
 
 export const k8sCreateResource = <
   TResource extends K8sResourceCommon,

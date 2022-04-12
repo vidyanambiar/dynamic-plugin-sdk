@@ -159,6 +159,7 @@ const updateResources =
 
     return getResources().then((resources) => {
       // Cache the resources whenever discovery completes to improve console load times.
+      debugger;
       cacheResources(resources);
       dispatch(receivedResources(resources));
       return resources;

@@ -99,6 +99,7 @@ export const sdkK8sReducer = (state: K8sState, action: K8sAction): K8sState => {
       return state.setIn(['RESOURCES', 'inFlight'], true);
 
     case ActionType.ReceivedResources:
+      console.log('action.payload.resources.models: ', action.payload.resources.models);
       return (
         action.payload.resources.models
           .filter(

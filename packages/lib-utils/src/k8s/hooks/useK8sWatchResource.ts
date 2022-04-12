@@ -43,6 +43,8 @@ export const useK8sWatchResource: UseK8sWatchResource = (initResource) => {
 
   const dispatch = useDispatch();
 
+  debugger;
+
   React.useEffect(() => {
     if (watchData) {
       dispatch(watchData.action);
@@ -72,6 +74,9 @@ export const useK8sWatchResource: UseK8sWatchResource = (initResource) => {
     const data = getReduxData(resourceK8s.get('data'), resource);
     const loaded = resourceK8s.get('loaded') as boolean;
     const loadError = resourceK8s.get('loadError');
+
+    debugger;
+
     return [data, loaded, loadError];
   }, [resource, resourceK8s, modelsLoaded, k8sModel]);
 };
